@@ -130,12 +130,12 @@ suite =
                         |> Result.map BIC.toPartyPrefix
                         |> expectOkWith "FDDO"
             ]
-        , describe "BIC.toCountyCode"
+        , describe "BIC.toCountryCode"
             [ test "extracts the country code from a BIC" <|
                 \_ ->
                     "FDDO DE MMXXX"
                         |> BIC.fromString
-                        |> Result.map BIC.toCountyCode
+                        |> Result.map BIC.toCountryCode
                         |> expectOkWith Iso3166.DE
             ]
         , describe "BIC.toPartySuffix"

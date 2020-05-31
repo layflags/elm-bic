@@ -1,7 +1,7 @@
 module BIC exposing
     ( BIC, PartyPrefix, CountryCode, PartySuffix, BranchId
     , fromString, Error(..)
-    , toString, toString11, toPartyPrefix, toCountyCode, toPartySuffix, toBranchId, toOptionalBranchId
+    , toString, toString11, toPartyPrefix, toCountryCode, toPartySuffix, toBranchId, toOptionalBranchId
     )
 
 {-| This library is for parsing Business Identifier Codes (BIC) used e.g. in
@@ -20,7 +20,7 @@ banking. The implementation is based on [ISO 9362 Fourth edition 2014-12-01](htt
 
 # Common helpers
 
-@docs toString, toString11, toPartyPrefix, toCountyCode, toPartySuffix, toBranchId, toOptionalBranchId
+@docs toString, toString11, toPartyPrefix, toCountryCode, toPartySuffix, toBranchId, toOptionalBranchId
 
 -}
 
@@ -113,11 +113,11 @@ toPartyPrefix (BIC code _ _ _) =
 {-| Extract country code from `BIC`.
 
     -- bic == BIC "FDDO" Iso3166.DE "MM" Nothing
-    toCountyCode bic -- Iso3166.DE
+    toCountryCode bic -- Iso3166.DE
 
 -}
-toCountyCode : BIC -> CountryCode
-toCountyCode (BIC _ code _ _) =
+toCountryCode : BIC -> CountryCode
+toCountryCode (BIC _ code _ _) =
     code
 
 
