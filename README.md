@@ -30,3 +30,7 @@ BIC.toString11 bic -- "FDDODEMMXXX"
 ## Credits
 
 This package uses [`rl-king/elm-iso3166-country-codes`](https://package.elm-lang.org/packages/rl-king/elm-iso3166-country-codes/2.0.0/Iso3166) for country code parsing.
+
+## License
+
+[BSD 3-Clause](LICENSE)
