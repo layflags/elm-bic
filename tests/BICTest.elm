@@ -32,8 +32,12 @@ suite =
                     "fddodemmxxx"
                         |> BIC.fromString
                         |> Expect.ok
-            , test "parses some well-known BICs successfully" <|
-                \_ ->
+            , Test.concat <|
+                List.map
+                    (\bic ->
+                        test ("parses " ++ bic ++ " successfully") <|
+                            \_ -> Expect.ok (BIC.fromString bic)
+                    )
                     [ "CHASUS33" -- JPMORGAN CHASE BANK, N.A.
                     , "BOFAUS3N" -- BANK OF AMERICA, N.A.
                     , "MIDLGB22" -- HSBC BANK PLC
@@ -50,9 +54,6 @@ suite =
                     , "DEUTDEDBPAL" -- DEUTSCHE BANK PRIVAT-&GESCHAEFTSKUNDEN AG
                     , "AXISINBB002" -- AXIS BANK LIMITED
                     ]
-                        |> List.map BIC.fromString
-                        |> List.all Result.isOk
-                        |> Expect.true "All IBANS are valid"
 
             -- Result.Err
             , test "fails if string is too short" <|
