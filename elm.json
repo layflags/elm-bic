@@ -1,0 +1,19 @@
+{
+  "name": "layflags/elm-bic",
+  "summary": "This library is for parsing Business Identifier Codes (BIC) used in banking",
+  "license": "BSD-3-Clause",
+  "version": "1.0.0",
+  "type": "package",
+  "exposed-modules": ["BIC"],
+  "source-directories": ["src"],
+  "elm-version": "0.19.1 <= v < 0.20.0",
+  "dependencies": {
+    "elm/core": "1.0.5 <= v < 2.0.0",
+    "rl-king/elm-iso3166-country-codes": "2.0.0 <= v < 3.0.0"
+  },
+  "test-dependencies": {
+    "elm-community/result-extra": "2.4.0 <= v < 3.0.0",
+    "elm-explorations/test": "1.2.2 <= v < 2.0.0"
+  }
+}
+
